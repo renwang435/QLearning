@@ -1,7 +1,9 @@
 import unittest
+
 import numpy as np
-from QAgent import QAgent
+
 from GridWorld import GridWorld
+from QAgent import QAgent
 
 
 class TestQAgent(unittest.TestCase):
@@ -34,7 +36,7 @@ class TestQAgent(unittest.TestCase):
         self._world.reset()
         self.assertTrue(self._world._agent_pos == 3)
 
-        print("OK")
+        print('OK')
 
     # Test that initial reward is 0
     def test_initial_reward(self):
