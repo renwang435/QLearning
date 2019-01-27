@@ -30,10 +30,10 @@ python main --n_threads=3
 ```
 where the argument following n_threads specifies the number of threads (and thus agents) we want to perform training with. The default value is a single agent, which is analogous to the first part.
 
-https://github.com/renwang435/QLearning/blob/master/async_qlearning_1.png
-https://github.com/renwang435/QLearning/blob/master/async_qlearning_2.png
-https://github.com/renwang435/QLearning/blob/master/async_qlearning_5.png
-https://github.com/renwang435/QLearning/blob/master/async_qlearning_10.png
+![alt text](https://github.com/renwang435/QLearning/blob/master/async_qlearning_1.png)
+![alt text](https://github.com/renwang435/QLearning/blob/master/async_qlearning_2.png)
+![alt text](https://github.com/renwang435/QLearning/blob/master/async_qlearning_5.png)
+![alt text](https://github.com/renwang435/QLearning/blob/master/async_qlearning_10.png)
 
 Above, we see a series of plots of average episodic reward (y-axis) and the number of total times steps for all agents that we have iterated through. As we can see, rewards increase proportionally with the number of threads run concurrently (aka agents contributing to the final policy).
 
