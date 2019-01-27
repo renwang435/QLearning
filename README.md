@@ -15,6 +15,8 @@ python main.py
 ```
 The code will then simulate 5000 episodes of agent learning, with the obstacle shifting position after 1000 episodes. The reward vs. episodes curve is then saved in "qlearning_0.65.png" and is shown below:
 
+![alt text](https://github.com/renwang435/QLearning/blob/master/qlearning_eps_0.65.png)
+
 Above we see a plot of reward (y-axis) and episodes trained for (x_axis). The agent succesfully learns to navigate through the grid around the obstacle in order to obtain a reward; once the obstacle shift right by 1 position after 1000 episodes, we see a sharp decrease in the reward obtained as the agent relearns an alternate strategy to circumvent the obstacle. Subsequently, the agent's reward continues to increase after relearning an optimal heuristic.
 
 # Part 2
@@ -27,6 +29,11 @@ To run the code, activate a virtual environment as specified in 1. and run
 python main --n_threads=3
 ```
 where the argument following n_threads specifies the number of threads (and thus agents) we want to perform training with. The default value is a single agent, which is analogous to the first part.
+
+https://github.com/renwang435/QLearning/blob/master/async_qlearning_1.png
+https://github.com/renwang435/QLearning/blob/master/async_qlearning_2.png
+https://github.com/renwang435/QLearning/blob/master/async_qlearning_5.png
+https://github.com/renwang435/QLearning/blob/master/async_qlearning_10.png
 
 Above, we see a series of plots of average episodic reward (y-axis) and the number of total times steps for all agents that we have iterated through. As we can see, rewards increase proportionally with the number of threads run concurrently (aka agents contributing to the final policy).
 
