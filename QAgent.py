@@ -61,3 +61,16 @@ class QAgent:
 
         return self._next_action
 
+    def get_agent_params(self):
+        return (self._num_states,
+                self._num_actions,
+                self._eps,
+                self._step_size,
+                self._discount_rate,
+                self._seed)
+
+    def get_rewards_and_states(self):
+        return self._Q
+
+    def async_update(self, curr_state, curr_action, step_size, grads):
+        self._Q[curr_state, curr_action] += step_size * grads[curr_state, curr_action]

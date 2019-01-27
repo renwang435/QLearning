@@ -1,22 +1,24 @@
 import numpy as np
+
 from QAgent import QAgent
+
 
 class AsyncQAgent(QAgent):
 
-    # TODO: Implementation which does not access hidden variables in master agent
     def __init__(self, agent, eps):
-        self._num_states = agent._num_states
-        self._num_actions = agent._num_actions
+        num_states, num_actions, _, step_size, discount_rate, seed = agent.get_agent_params()
+        self._num_states = num_states
+        self._num_actions = num_actions
         self._eps = eps
-        self._step_size = agent._step_size
-        self._discount_rate = agent._discount_rate
-        self._seed = agent._seed
+        self._step_size = step_size
+        self._discount_rate = discount_rate
+        self._seed = seed
 
         self.copy_policy(agent)
         self.zero_grad()
 
     def copy_policy(self, agent):
-        self._Q = agent._Q
+        self._Q = agent.get_rewards_and_states()
 
     def zero_grad(self):
         self._grads = np.zeros_like(self._Q)
@@ -40,3 +42,6 @@ class AsyncQAgent(QAgent):
         self._curr_state = next_state
 
         return self._next_action, state, action
+
+    def get_update_params(self):
+        return self._step_size, self._grads
