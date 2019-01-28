@@ -38,3 +38,4 @@ where the argument following n_threads specifies the number of threads (and thus
 Above, we see a series of plots of average episodic reward (y-axis) and the number of total times steps for all agents that we have iterated through. As we can see, rewards increase proportionally with the number of threads run concurrently (aka agents contributing to the final policy).
 
 # Part 3
+Relevant files: CNN.py
